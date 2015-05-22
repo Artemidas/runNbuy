@@ -1,0 +1,56 @@
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Registro</h2>
+    <form name="registerForm">
+      <div ng-class="registerForm.email.$invalid && 
+           registerForm.email.$touched ? 'form-group has-error has-feedback' : 'form-group'">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-at"></i></span>
+          <input ng-required="true" 
+                 name="email" 
+                 type="email" 
+                 ng-model="user.email" 
+                 class="form-control"
+                 placeholder="john.doe@domain.com" />
+        </div>
+      </div>
+      <div ng-class="registerForm.pass.$invalid && 
+           registerForm.pass.$touched &&
+           user.pass != user.confirm ? 'form-group has-error has-feedback' : 'form-group'">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input ng-required="true" 
+                 name="pass" 
+                 type="password" 
+                 ng-model="user.pass" 
+                 class="form-control"
+                 placeholder="john.doe.pass" />
+        </div>
+      </div>
+      </p>
+      <div ng-class="registerForm.confirm.$touched && 
+           registerForm.confirm.$invalid ||
+           registerForm.confirm.$dirty &&
+           user.pass != user.confirm ? 'form-group has-error has-feedback' : 'form-group'">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input ng-required="true" 
+                 name="confirm" 
+                 type="password" 
+                 ng-model="user.confirm" 
+                 class="form-control"
+                 placeholder="john.doe.pass" />
+        </div>
+      </div>
+      </p>
+      <p>
+        <button ng-disabled="registerForm.$invalid || user.pass != user.confirm"
+                id="registerButton"
+                class="btn btn-primary btn-lg btn-block" 
+                ng-click="createAccount(user)"
+                data-loading-text="Creando cuenta...">Crear cuenta</button>
+      </p>
+    </form>
+  </div>
+</div>

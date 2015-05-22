@@ -1,0 +1,56 @@
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Iniciar sessión</h2>
+    <form name="loginForm">
+      <div ng-class="loginForm.email.$invalid && 
+           loginForm.email.$touched ? 'form-group has-error has-feedback' : 'form-group'">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-at"></i></span>
+          <input ng-required="true" 
+                 name="email" 
+                 type="email" 
+                 ng-model="user.email"
+                 placeholder="Email"
+                 class="form-control input-lg"
+                 placeholder="john.doe@domail.com" />
+        </div>
+      </div>
+      <div ng-class="loginForm.pass.$invalid && 
+           loginForm.pass.$touched ? 'form-group has-error has-feedback' : 'form-group'">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input ng-required="true" 
+                name="pass" 
+                type="password" 
+                ng-model="user.pass"
+                placeholder="Contraseña"
+                class="form-control input-lg"
+                placeholder="john.doe.pass" />
+        </div>
+      </div>
+      <p>
+        <button ng-disabled="loginForm.$invalid"
+                id="loginButton"
+                class="btn btn-primary btn-lg btn-block"
+                ng-click="passwordLogin(user)"
+                data-loading-text="Iniciando sessión...">Iniciar sessión</button>
+        <p>or <a href="#/register">Register</a></p>
+      </p>
+    </form>
+  </div>
+</div>
+
+
+
+<fieldset>
+  <legend>Oauth</legend>
+  <p>
+    <button class="btn btn-primary" ng-click="anonymousLogin()">Anonymous</button>
+    <button class="btn btn-primary" ng-click="oauthLogin('facebook')">Facebook</button>
+    <button class="btn btn-primary" ng-click="oauthLogin('google')">Google</button>
+    <button class="btn btn-primary" ng-click="oauthLogin('twitter')">Twitter</button>
+    <button class="btn btn-primary" ng-click="oauthLogin('github')">GitHub</button>
+  </p>
+</fieldset>
+
