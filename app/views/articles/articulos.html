@@ -1,13 +1,13 @@
 <div class="jumbotron">
 	<div class="container">
-		<h1>Articulos</h1>
-  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quae a, fugiat incidunt eaque omnis, voluptate necessitatibus aspernatur maiores nam nulla velit officia sapiente harum vitae magnam expedita repellendus accusamus.</p>
+		<h1>Bienvenido al apartado de los articulos</h1>
+  	<p>Hoy es tu día de suerte tenemos grandes ofertas para ti!! Disponemos de una gran variedad de productos, mira nuestros artículos y no seas el último en llegar, corre! Se el primero en llegar a la tienda y comprar los productos que te mostramos, no te arrepentirás.</p>
 	</div>
 </div>
 <div class="row">
 	<div class="col-sm-6 col-md-4" ng-repeat="(key, articulo) in articulos">
     <div class="thumbnail">
-      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkzIiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=">
+      <img src="{{ articulo.image }}">
       <div class="caption">
         <h3>{{ articulo.name }}</h3>
         <p>{{ articulo.description }}</p>
