@@ -1,0 +1,9 @@
+{
+  "firebase": "run-n-buy",
+  "public": "app",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
